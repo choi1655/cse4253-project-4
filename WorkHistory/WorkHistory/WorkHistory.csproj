@@ -120,6 +120,8 @@
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
         <InterfaceDefinition Include="Main.storyboard" />
+        <InterfaceDefinition Include="AboutMeViewController.xib" />
+        <InterfaceDefinition Include="ExperienceViewController.xib" />
     </ItemGroup>
     <ItemGroup>
         <None Include="Info.plist" />
@@ -132,6 +134,14 @@
         <Compile Include="ViewController.cs" />
         <Compile Include="ViewController.designer.cs">
             <DependentUpon>ViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="AboutMeViewController.cs" />
+        <Compile Include="AboutMeViewController.designer.cs">
+          <DependentUpon>AboutMeViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ExperienceViewController.cs" />
+        <Compile Include="ExperienceViewController.designer.cs">
+          <DependentUpon>ExperienceViewController.cs</DependentUpon>
         </Compile>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
