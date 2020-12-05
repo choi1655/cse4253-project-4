@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,25 +20,98 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To John's App!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhv-jk-vVn">
-                                <rect key="frame" x="112.5" y="437.5" width="189" height="21"/>
+                                <rect key="frame" x="113" y="94" width="188.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="vdH-Ia-yyy">
+                                <rect key="frame" x="165" y="364" width="84" height="168"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxI-e8-oSI">
+                                        <rect key="frame" x="0.0" y="0.0" width="84" height="30"/>
+                                        <state key="normal" title="About Me"/>
+                                        <connections>
+                                            <segue destination="HnK-rs-YCr" kind="presentation" id="jA1-6e-6RS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQ3-aw-B7M">
+                                        <rect key="frame" x="0.0" y="69" width="84" height="30"/>
+                                        <state key="normal" title="Experiences"/>
+                                        <connections>
+                                            <segue destination="3U4-xm-B4G" kind="presentation" id="Ta8-8b-OpZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJ7-sY-OoN">
+                                        <rect key="frame" x="0.0" y="138" width="84" height="30"/>
+                                        <state key="normal" title="Website"/>
+                                        <connections>
+                                            <action selector="websitePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I8p-Kh-v7V"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xhv-jk-vVn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G3t-Bv-Esl"/>
-                            <constraint firstItem="xhv-jk-vVn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="r4E-dy-dbj"/>
+                            <constraint firstItem="vdH-Ia-yyy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N8m-ab-1f9"/>
+                            <constraint firstItem="xhv-jk-vVn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="UcM-BF-34v"/>
+                            <constraint firstItem="vdH-Ia-yyy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cwo-BX-Eb2"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="titleLabel" destination="xhv-jk-vVn" id="Du2-Nd-705"/>
+                        <outlet property="websiteButton" destination="oJ7-sY-OoN" id="7kj-lK-5wZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="WE7-GC-hIl">
+            <objects>
+                <viewController id="HnK-rs-YCr" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cwv-Ej-cJW"/>
+                        <viewControllerLayoutGuide type="bottom" id="aNY-Ri-6Er"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TIy-1L-CDK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4d5-Md-h5n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1139" y="-207"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CMx-il-oXu">
+            <objects>
+                <viewController id="3U4-xm-B4G" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7dm-r5-80v"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Xg-T8-9WF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1RR-Yk-ULT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I52-MP-c36" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1203" y="431"/>
+        </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
