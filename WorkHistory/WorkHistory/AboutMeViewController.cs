@@ -6,7 +6,7 @@ namespace WorkHistory
 {
     public partial class AboutMeViewController : UIViewController
     {
-        private AppManager manager;
+        private readonly AppManager manager;
 
         public AboutMeViewController(IntPtr handle) : base(handle)
         {
@@ -37,6 +37,14 @@ namespace WorkHistory
             myHIstoryBox.BackgroundColor = UIColor.White;
             myHIstoryBox.Layer.CornerRadius = 15;
             myHIstoryBox.Text = manager.GetMyHistory();
+
+            currentGPALabel.TextColor = UIColor.Black;
+
+            var gpa = NSUserDefaults.StandardUserDefaults.DoubleForKey("gpa");
+            currentGPALabel.Text = String.Format("My current GPA: {0:0.00} / 4.0", gpa);
+            
+            slider.TintColor = UIColor.Red;
+            slider.Value = (float) gpa;
         }
 
         public override void ViewWillDisappear(bool animated)
@@ -57,6 +65,12 @@ namespace WorkHistory
         {
             base.DidReceiveMemoryWarning();
             // Release any cached data, images, etc that aren't in use.
+        }
+
+        partial void sliderChanged(UISlider sender)
+        {
+            this.currentGPALabel.Text = String.Format("My current GPA: {0:0.00} / 4.0", sender.Value);
+            NSUserDefaults.StandardUserDefaults.SetDouble(sender.Value, "gpa");
         }
     }
 }

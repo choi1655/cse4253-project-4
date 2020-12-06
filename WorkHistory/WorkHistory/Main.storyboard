@@ -110,6 +110,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My current GPA: x.xx / 4.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6H-qf-ybq" misplaced="YES">
+                                <rect key="frame" x="30" y="567.5" width="354" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="aBm-Ei-wde" misplaced="YES">
+                                <rect key="frame" x="28" y="613.5" width="358" height="31"/>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="HnK-rs-YCr" eventType="valueChanged" id="JEN-eX-7MC"/>
+                                </connections>
+                            </slider>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tbj-Gj-1G0" misplaced="YES">
                                 <rect key="frame" x="10" y="362.5" width="394" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -124,30 +136,38 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="aBm-Ei-wde" secondAttribute="trailing" constant="10" id="1LE-Jy-h2I"/>
                             <constraint firstItem="Tbj-Gj-1G0" firstAttribute="leading" secondItem="TIy-1L-CDK" secondAttribute="leading" constant="10" id="3gX-xT-0Uk"/>
                             <constraint firstItem="p5Q-Z2-sDO" firstAttribute="leading" secondItem="TIy-1L-CDK" secondAttribute="leadingMargin" constant="10" id="49v-38-oJq"/>
                             <constraint firstItem="kAj-0a-K5g" firstAttribute="top" secondItem="VBU-C8-NFn" secondAttribute="bottom" constant="5" id="78n-C8-R9b"/>
                             <constraint firstItem="MPJ-I9-5e6" firstAttribute="leading" secondItem="TIy-1L-CDK" secondAttribute="leading" constant="10" id="8nA-Tr-QHg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="U6H-qf-ybq" secondAttribute="trailing" constant="10" id="CIT-0K-lii"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kAj-0a-K5g" secondAttribute="trailing" constant="10" id="Ll4-7w-raN"/>
                             <constraint firstItem="kAj-0a-K5g" firstAttribute="centerX" secondItem="TIy-1L-CDK" secondAttribute="centerX" id="OXz-mQ-tHV"/>
                             <constraint firstItem="Tbj-Gj-1G0" firstAttribute="top" secondItem="p5Q-Z2-sDO" secondAttribute="bottom" id="Pja-ui-59y"/>
                             <constraint firstAttribute="trailing" secondItem="MPJ-I9-5e6" secondAttribute="trailing" constant="10" id="TI6-lF-3Iz"/>
                             <constraint firstItem="kAj-0a-K5g" firstAttribute="leading" secondItem="TIy-1L-CDK" secondAttribute="leadingMargin" constant="10" id="Ta0-wK-7HA"/>
+                            <constraint firstItem="U6H-qf-ybq" firstAttribute="top" secondItem="Tbj-Gj-1G0" secondAttribute="bottom" constant="5" id="ZHz-AP-DUj"/>
                             <constraint firstItem="p5Q-Z2-sDO" firstAttribute="top" secondItem="MPJ-I9-5e6" secondAttribute="bottom" constant="20" id="aS7-43-Rsd"/>
                             <constraint firstItem="MPJ-I9-5e6" firstAttribute="top" secondItem="kAj-0a-K5g" secondAttribute="bottom" id="bLm-MD-qhD"/>
+                            <constraint firstItem="aBm-Ei-wde" firstAttribute="leading" secondItem="TIy-1L-CDK" secondAttribute="leadingMargin" constant="10" id="m9y-BD-aRm"/>
                             <constraint firstItem="VBU-C8-NFn" firstAttribute="top" secondItem="cwv-Ej-cJW" secondAttribute="bottom" constant="60" id="mgw-gh-oIm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="p5Q-Z2-sDO" secondAttribute="trailing" constant="10" id="p84-uP-YH0"/>
                             <constraint firstItem="Tbj-Gj-1G0" firstAttribute="centerX" secondItem="TIy-1L-CDK" secondAttribute="centerX" id="pw7-yc-rBG"/>
                             <constraint firstItem="VBU-C8-NFn" firstAttribute="centerX" secondItem="TIy-1L-CDK" secondAttribute="centerX" id="q8k-st-7yV"/>
                             <constraint firstAttribute="trailing" secondItem="Tbj-Gj-1G0" secondAttribute="trailing" constant="10" id="sgV-PW-Qk9"/>
+                            <constraint firstItem="U6H-qf-ybq" firstAttribute="leading" secondItem="TIy-1L-CDK" secondAttribute="leadingMargin" constant="10" id="slH-6e-FLY"/>
+                            <constraint firstItem="aBm-Ei-wde" firstAttribute="top" secondItem="U6H-qf-ybq" secondAttribute="bottom" constant="25" id="wWj-hg-feG"/>
                             <constraint firstItem="MPJ-I9-5e6" firstAttribute="centerX" secondItem="TIy-1L-CDK" secondAttribute="centerX" id="ywn-Sl-Aoh"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="currentGPALabel" destination="U6H-qf-ybq" id="ueW-eN-uqJ"/>
                         <outlet property="hiimjohnLabel" destination="p5Q-Z2-sDO" id="anp-tg-EVm"/>
                         <outlet property="label" destination="VBU-C8-NFn" id="6JK-Ey-1sY"/>
                         <outlet property="myHIstoryBox" destination="Tbj-Gj-1G0" id="1rE-Id-0qG"/>
                         <outlet property="myLittleNoteLabel" destination="kAj-0a-K5g" id="m9D-ZO-WRD"/>
+                        <outlet property="slider" destination="aBm-Ei-wde" id="jJW-gH-Ci3"/>
                         <outlet property="textBox" destination="MPJ-I9-5e6" id="J6J-cx-Mhr"/>
                     </connections>
                 </viewController>
