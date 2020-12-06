@@ -1,7 +1,7 @@
-﻿using Foundation;
-using System;
-using UIKit;
+﻿using System;
+using Foundation;
 using SafariServices;
+using UIKit;
 
 namespace WorkHistory
 {
@@ -15,8 +15,11 @@ namespace WorkHistory
         {
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
-            //titleLabel.Hidden = false;
             titleLabel.TextColor = UIColor.Black;
+
+            aboutMeButton.Layer.CornerRadius = 15;
+            experiencesButton.Layer.CornerRadius = 15;
+            websiteButton.Layer.CornerRadius = 15;
         }
 
         public override void DidReceiveMemoryWarning()

@@ -1,14 +1,9 @@
 ﻿using System;
-using Foundation;
 
 namespace WorkHistory
 {
     public class AppManager
     {
-        public AppManager()
-        {
-        }
-
         public string GetMyHistory()
         {
             return "Hi, I'm John Choi and I study Computer Science and " +
@@ -23,14 +18,13 @@ namespace WorkHistory
             Experience experience;
             string jobTitle;
             string description;
-            string url;
+            string url = "https://johnchoi96.github.io/cse4253/" + CompanyName.ToLower() + ".png";
             switch (CompanyName)
             {
                 case "SAS":
                     {
                         jobTitle = "iOS R&D Techinical Intern";
                         description = "Assisted iOS software engineering team";
-                        url = "https://johnchoi96.github.io/cse4253/sas.png";
                         experience = new Experience(jobTitle, description, CompanyName, url);
                     }
                     break;
@@ -38,7 +32,6 @@ namespace WorkHistory
                     {
                         jobTitle = "Software Development Intern";
                         description = "Built an application that performs HTTP requests";
-                        url = "https://johnchoi96.github.io/cse4253/lenovo.png";
                         experience = new Experience(jobTitle, description, CompanyName, url);
                     }
                     break;
@@ -47,7 +40,6 @@ namespace WorkHistory
                         jobTitle = "Undergraduate Research Software Engineer";
                         description = "Co-authored an abstract titled “Physically Based Hydrology Model in a Snowmelt-Dominant" +
                                                 "Watershed for 2020 AGU Fall Meeting.";
-                        url = "https://johnchoi96.github.io/cse4253/nasa.png";
                         experience = new Experience(jobTitle, description, CompanyName, url);
                     }
                     break;
