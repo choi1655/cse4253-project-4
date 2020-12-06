@@ -41,10 +41,10 @@ namespace WorkHistory
             currentGPALabel.TextColor = UIColor.Black;
 
             var gpa = NSUserDefaults.StandardUserDefaults.DoubleForKey("gpa");
-            currentGPALabel.Text = String.Format("My current GPA: {0:0.00} / 4.0", gpa);
+            currentGPALabel.Text = String.Format("My current GPA: {0:0.00} / 4.00", gpa);
             
             slider.TintColor = UIColor.Red;
-            slider.Value = (float) gpa;
+            slider.Value = (float)gpa;
         }
 
         public override void ViewWillDisappear(bool animated)
@@ -67,9 +67,9 @@ namespace WorkHistory
             // Release any cached data, images, etc that aren't in use.
         }
 
-        partial void sliderChanged(UISlider sender)
+        partial void SliderChanged(UISlider sender)
         {
-            this.currentGPALabel.Text = String.Format("My current GPA: {0:0.00} / 4.0", sender.Value);
+            this.currentGPALabel.Text = String.Format("My current GPA: {0:0.00} / 4.00", sender.Value);
             NSUserDefaults.StandardUserDefaults.SetDouble(sender.Value, "gpa");
         }
     }

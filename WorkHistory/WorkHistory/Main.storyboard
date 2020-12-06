@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -119,7 +120,7 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="aBm-Ei-wde" misplaced="YES">
                                 <rect key="frame" x="28" y="613.5" width="358" height="31"/>
                                 <connections>
-                                    <action selector="sliderChanged:" destination="HnK-rs-YCr" eventType="valueChanged" id="JEN-eX-7MC"/>
+                                    <action selector="SliderChanged:" destination="HnK-rs-YCr" eventType="valueChanged" id="JEN-eX-7MC"/>
                                 </connections>
                             </slider>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tbj-Gj-1G0" misplaced="YES">
@@ -193,14 +194,114 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="yag-OA-ohN" misplaced="YES">
+                                <rect key="frame" x="40" y="146" width="334" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dR-bx-y1c">
+                                        <rect key="frame" x="0.0" y="0.0" width="95.5" height="30"/>
+                                        <color key="backgroundColor" red="0.19940994440000001" green="0.2008507621" blue="0.87507977729999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="NASA">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ButtonPressed:" destination="3U4-xm-B4G" eventType="touchUpInside" id="WlB-P6-v6g"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSZ-TU-R5k">
+                                        <rect key="frame" x="119.5" y="0.0" width="95" height="30"/>
+                                        <color key="backgroundColor" red="0.19940994440000001" green="0.2008507621" blue="0.87507977729999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="SAS">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ButtonPressed:" destination="3U4-xm-B4G" eventType="touchUpInside" id="7mK-4j-szC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3V-4P-C6T">
+                                        <rect key="frame" x="238.5" y="0.0" width="95.5" height="30"/>
+                                        <color key="backgroundColor" red="0.19940994440000001" green="0.2008507621" blue="0.87507977729999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Lenovo">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ButtonPressed:" destination="3U4-xm-B4G" eventType="touchUpInside" id="bC8-GV-kGf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9MA-wh-Fqk" misplaced="YES">
+                                <rect key="frame" x="85" y="216" width="244" height="244"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9MA-wh-Fqk" secondAttribute="height" id="HZ6-Qe-EdP"/>
+                                    <constraint firstAttribute="width" constant="244" id="lCh-jd-Bbc"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhB-kG-flq" misplaced="YES">
+                                <rect key="frame" x="30" y="480" width="354" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{TITLE}" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xxn-1Y-1rW" misplaced="YES">
+                                <rect key="frame" x="30" y="510.5" width="354" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3A0-4C-3JE" misplaced="YES">
+                                <rect key="frame" x="30" y="541" width="354" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xU-1s-KBI" misplaced="YES">
+                                <rect key="frame" x="30" y="571.5" width="354" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="2wf-Xq-CF7"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="2xU-1s-KBI" secondAttribute="trailing" constant="10" id="47j-Ut-1zk"/>
+                            <constraint firstItem="9MA-wh-Fqk" firstAttribute="leading" secondItem="1RR-Yk-ULT" secondAttribute="leadingMargin" constant="65" id="8Oj-77-ZhS"/>
+                            <constraint firstItem="yag-OA-ohN" firstAttribute="top" secondItem="4CL-PV-Vh3" secondAttribute="bottom" constant="50" id="DCR-CN-alg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9MA-wh-Fqk" secondAttribute="trailing" constant="65" id="Jik-hC-tck"/>
                             <constraint firstItem="4CL-PV-Vh3" firstAttribute="top" secondItem="7dm-r5-80v" secondAttribute="bottom" constant="60" id="KHu-OM-Xa8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xxn-1Y-1rW" secondAttribute="trailing" constant="10" id="QVN-LK-x9T"/>
+                            <constraint firstItem="Xxn-1Y-1rW" firstAttribute="leading" secondItem="1RR-Yk-ULT" secondAttribute="leadingMargin" constant="10" id="UZm-fd-jCI"/>
+                            <constraint firstItem="dhB-kG-flq" firstAttribute="leading" secondItem="1RR-Yk-ULT" secondAttribute="leadingMargin" constant="10" id="W0G-TK-KK9"/>
+                            <constraint firstItem="dhB-kG-flq" firstAttribute="top" secondItem="9MA-wh-Fqk" secondAttribute="bottom" constant="20" id="Xi6-Nu-MS8"/>
                             <constraint firstItem="4CL-PV-Vh3" firstAttribute="centerX" secondItem="1RR-Yk-ULT" secondAttribute="centerX" id="ZOd-uc-soj"/>
+                            <constraint firstItem="2xU-1s-KBI" firstAttribute="leading" secondItem="1RR-Yk-ULT" secondAttribute="leadingMargin" constant="10" id="apb-Bm-dnX"/>
+                            <constraint firstItem="3A0-4C-3JE" firstAttribute="top" secondItem="Xxn-1Y-1rW" secondAttribute="bottom" constant="10" id="guI-xa-1l4"/>
+                            <constraint firstItem="3A0-4C-3JE" firstAttribute="leading" secondItem="1RR-Yk-ULT" secondAttribute="leadingMargin" constant="10" id="hJ8-DJ-P7W"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3A0-4C-3JE" secondAttribute="trailing" constant="10" id="hne-Qt-D60"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yag-OA-ohN" secondAttribute="trailing" constant="20" id="i0o-du-UJu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dhB-kG-flq" secondAttribute="trailing" constant="10" id="kHQ-BQ-P3L"/>
+                            <constraint firstItem="9MA-wh-Fqk" firstAttribute="top" secondItem="yag-OA-ohN" secondAttribute="bottom" constant="40" id="mlw-BI-Egu"/>
+                            <constraint firstItem="Xxn-1Y-1rW" firstAttribute="top" secondItem="dhB-kG-flq" secondAttribute="bottom" constant="10" id="oAx-tM-grl"/>
+                            <constraint firstItem="2xU-1s-KBI" firstAttribute="top" secondItem="3A0-4C-3JE" secondAttribute="bottom" constant="10" id="qFo-YW-3bh"/>
+                            <constraint firstItem="yag-OA-ohN" firstAttribute="leading" secondItem="1RR-Yk-ULT" secondAttribute="leadingMargin" constant="20" id="zqC-0S-6sZ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="9MA-wh-Fqk" id="i9l-uw-vPZ"/>
+                        <outlet property="jobDesc" destination="3A0-4C-3JE" id="3ja-lh-KCu"/>
+                        <outlet property="jobDescriptionBox" destination="2xU-1s-KBI" id="QS5-az-V1Z"/>
+                        <outlet property="jobTitle" destination="dhB-kG-flq" id="pqs-v0-MlX"/>
+                        <outlet property="jobTitleLabel" destination="Xxn-1Y-1rW" id="MD6-64-4Bq"/>
+                        <outlet property="lenovoButton" destination="t3V-4P-C6T" id="zOf-BE-etq"/>
+                        <outlet property="nasaButton" destination="1dR-bx-y1c" id="XgK-wR-0f3"/>
+                        <outlet property="sasButton" destination="tSZ-TU-R5k" id="6an-YZ-dsf"/>
                         <outlet property="titleLabel" destination="4CL-PV-Vh3" id="KJW-yK-QNY"/>
                     </connections>
                 </viewController>

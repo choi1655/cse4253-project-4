@@ -33,8 +33,8 @@ namespace WorkHistory
 		[Outlet]
 		UIKit.UITextView textBox { get; set; }
 
-		[Action ("sliderChanged:")]
-		partial void sliderChanged (UIKit.UISlider sender);
+		[Action ("SliderChanged:")]
+		partial void SliderChanged (UIKit.UISlider sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
