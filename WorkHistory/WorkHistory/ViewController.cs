@@ -25,7 +25,7 @@ namespace WorkHistory
             // Release any cached data, images, etc that aren't in use.
         }
 
-        partial void websitePressed(UIButton button)
+        partial void WebsitePressed(UIButton Button)
         {
             var url = new NSUrl("https://johnchoi96.github.io/");
             var sfViewController = new SFSafariViewController(url);

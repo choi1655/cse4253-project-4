@@ -1,39 +1,37 @@
 // WARNING
 //
-// This file has been generated automatically by Visual Studio from the outlets and
-// actions declared in your storyboard file.
-// Manual changes to this file will not be maintained.
+// This file has been generated automatically by Visual Studio to store outlets and
+// actions made in the UI designer. If it is removed, they will be lost.
+// Manual changes to this file may not be handled correctly.
 //
 using Foundation;
-using System;
 using System.CodeDom.Compiler;
 
 namespace WorkHistory
 {
-    [Register ("ViewController")]
-    partial class ViewController
-    {
-        [Outlet]
-        UIKit.UILabel titleLabel { get; set; }
+	[Register ("ViewController")]
+	partial class ViewController
+	{
+		[Outlet]
+		UIKit.UILabel titleLabel { get; set; }
 
+		[Outlet]
+		UIKit.UIButton websiteButton { get; set; }
 
-        [Outlet]
-        UIKit.UIButton websiteButton { get; set; }
+		[Action ("WebsitePressed:")]
+		partial void WebsitePressed (UIKit.UIButton sender);
+		
+		void ReleaseDesignerOutlets ()
+		{
+			if (titleLabel != null) {
+				titleLabel.Dispose ();
+				titleLabel = null;
+			}
 
-
-        [Action ("aboutMePressed:")]
-        partial void aboutMePressed (UIKit.UIButton sender);
-
-
-        [Action ("experiencePressed:")]
-        partial void experiencePressed (UIKit.UIButton sender);
-
-
-        [Action ("websitePressed:")]
-        partial void websitePressed (UIKit.UIButton sender);
-
-        void ReleaseDesignerOutlets ()
-        {
-        }
-    }
+			if (websiteButton != null) {
+				websiteButton.Dispose ();
+				websiteButton = null;
+			}
+		}
+	}
 }

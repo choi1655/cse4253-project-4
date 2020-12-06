@@ -6,7 +6,7 @@ namespace WorkHistory
 {
     public partial class AboutMeViewController : UIViewController
     {
-        public AboutMeViewController() : base("AboutMeViewController", null)
+        public AboutMeViewController(IntPtr handle) : base(handle)
         {
         }
 
@@ -14,6 +14,7 @@ namespace WorkHistory
         {
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
+            label.TextColor = UIColor.Black;
         }
 
         public override void DidReceiveMemoryWarning()

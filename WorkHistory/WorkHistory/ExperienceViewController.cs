@@ -6,7 +6,7 @@ namespace WorkHistory
 {
     public partial class ExperienceViewController : UIViewController
     {
-        public ExperienceViewController() : base("ExperienceViewController", null)
+        public ExperienceViewController(IntPtr handle) : base(handle)
         {
         }
 
