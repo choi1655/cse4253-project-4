@@ -1,20 +1,22 @@
-﻿// WARNING
+// WARNING
 //
-// This file has been generated automatically by Xamarin Studio from the outlets and
+// This file has been generated automatically by Visual Studio from the outlets and
 // actions declared in your storyboard file.
 // Manual changes to this file will not be maintained.
 //
 using Foundation;
 using System;
 using System.CodeDom.Compiler;
-using UIKit;
 
 namespace WorkHistory
 {
-    [Register("ExperienceViewController")]
+    [Register ("ExperienceViewController")]
     partial class ExperienceViewController
     {
-        void ReleaseDesignerOutlets()
+        [Outlet]
+        UIKit.UILabel titleLabel { get; set; }
+
+        void ReleaseDesignerOutlets ()
         {
         }
     }

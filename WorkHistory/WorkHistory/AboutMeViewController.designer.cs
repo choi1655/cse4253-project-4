@@ -14,7 +14,23 @@ namespace WorkHistory
     partial class AboutMeViewController
     {
         [Outlet]
+        UIKit.UILabel hiimjohnLabel { get; set; }
+
+
+        [Outlet]
         UIKit.UILabel label { get; set; }
+
+
+        [Outlet]
+        UIKit.UITextView myHIstoryBox { get; set; }
+
+
+        [Outlet]
+        UIKit.UILabel myLittleNoteLabel { get; set; }
+
+
+        [Outlet]
+        UIKit.UITextView textBox { get; set; }
 
         void ReleaseDesignerOutlets ()
         {

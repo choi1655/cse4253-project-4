@@ -143,6 +143,7 @@
         <Compile Include="ExperienceViewController.designer.cs">
           <DependentUpon>ExperienceViewController.cs</DependentUpon>
         </Compile>
+        <Compile Include="AppManager.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
